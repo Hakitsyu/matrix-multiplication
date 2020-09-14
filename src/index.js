@@ -6,16 +6,13 @@ const multiply = (a, b) => {
         let c = [];
         for (let j = 0; j < b.length; j++) {
             for (let k = 0; k < b[j].length; k++) {
-                if (c[k] == null)
-                    c[k] = [];
-                c[k] = [ ...c[k], b[j][k] ];
+                c[k] = (c[k] == null) ? [ b[j][k] ] : [ ...c[k], b[j][k] ];
             }
         }
 
         d[i] = [];
         for (let k = 0; k < c.length; k++) {
-            if (d[i][k] == null)
-                d[i][k] = [];
+            d[i][k] = [];
             for (let l = 0; l < a[0].length; l++) {
                 d[i][k] = [ ...d[i][k], a[i][l] * c[k][l] ];
             }
